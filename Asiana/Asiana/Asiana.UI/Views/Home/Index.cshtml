@@ -1,0 +1,69 @@
+﻿@model Asiana.UI.Models.PageModel
+@using Asiana.UI.Extensions
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section TopNavigation {
+    @{Html.RenderPartial("Navigation/TopNavigationList", Model.TopNavigation);}
+}
+<div id="content">
+<div class="rotatingPageBanner">
+    <div class="wrapper">
+        @Html.HtmlActionLink(@<img src="/content/products/promotion/hand-made-fair-trade.png" />,"Index","Browse",new { path = "/Department/Bags"}, null)
+        <img src="/content/products/promotion/free-delivery-1.png" />
+    </div>
+</div>
+    <div id="body">
+        <div class="sideBox slot">
+            <h1>
+                <em>Hand Made</em></h1>
+            <p>
+                Our amazing hand made products are made from natural materials with care by skilled
+                traditional craftsmen and craftswomen from their native homelands. Each designer
+                explains their origins and the reasons why they create the wonderful items they
+                do.
+            </p>
+            <p class="more">
+                <a href="#">More</a></p>
+            <h1>
+                <em>Fair Trade</em></h1>
+            <p>
+                <em>Fashinon</em> is a fair trade partner and we ensure that we only buy from small
+                traders and co-operatives
+            </p>
+            <p class="more">
+                <a href="#">More</a></p>
+        </div>
+           <div class="sideBox slot one" style="margin-left: 10px;">
+           @{Html.RenderAction("Slot", "Slot", new { page = "Home", slot = "Featured-One"});}
+           </div>
+
+           <div class="sideBox slot two" style="margin-left: 10px;">
+           @{Html.RenderAction("Slot", "Slot", new { page = "Home", slot = "Featured-One"});}
+           </div>
+    </div>
+   
+ 
+    <script language="javascript" type="text/javascript">
+        jQuery(document).ready(function () {
+
+            $('.wrapper').cycle({
+                fx: 'scrollLeft',
+                timeout: 5000
+            });
+
+//            jQuery('.wrapper').jcarousel({
+//                auto: 2,
+//                wrap: 'last'
+//            });
+        });
+    </script>
+    @*  <div id="featuredProducts" class="ui-corner-all">
+        <div class="wrapper">
+            @{ ViewData.Add("Size", "80");}
+            @{Html.RenderPartial("Navigation/RecordsList", Model.Response.Documents.Skip(6).Take(4), ViewData);}
+            <div class="clear">
+            </div>
+        </div>
+    </div>*@
+</div>

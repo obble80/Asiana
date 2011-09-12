@@ -1,0 +1,8 @@
+﻿@Html.F
+<div class="editor-control-bounds">
+@foreach(var color in Enum.GetValues(typeof(System.Drawing.KnownColor))) {
+    <div class="editor-colourpicker-item" style="background-color:@color.ToString().ToLower()"></div>
+}
+<div style='clear:both;'></div>
+</div>
+</form>

@@ -1,0 +1,84 @@
+﻿@model Asiana.UI.Models.PageModel
+@{
+    ViewBag.Title = "Product";
+}
+<div id="recordDetail">
+    <div id="images">
+        <div id="zoomContainer">
+        </div>
+        <div id="alternateImages">
+            @if (Model.Product.AlternateImages.Count > 0)
+            {
+                <div class="smallAlternate">
+                    <a href="#" data-zoom="true" data-zoom-image="/Image/Zoom/@Model.Product.Image">
+                        <img src="/Image/Size/@Model.Product.Image/80/80" /></a></div>
+                foreach (var image in Model.Product.AlternateImages)
+                {
+                <div class="smallAlternate">
+                    <a href="#" data-zoom="true" data-zoom-image="/Image/Zoom/@image">
+                        <img src="/Image/Size/@image/80/80" /></a></div>
+                }
+            }
+        </div>
+    </div>
+    <div id="detailContainer">
+        <h2>@Model.Product.Name</h2>
+        @if (Model.Review != null)
+        {
+            <div>
+                Rating:
+                <div class="rateit" data-rateit-value="@Model.Review.Rating" data-rateit-readonly="true"/>
+                Average @Math.Round(Model.Review.Rating, 1) / 5 from @Model.Review.Reviews.Count
+                Reviews</div>
+        }
+        <p>@Model.Product.Description</p>
+        <h3>
+            Features</h3>
+        <ul>
+            @foreach (var feature in Model.Product.Features)
+            {
+                <li>@feature</li>
+            }
+        </ul>
+        <div class="standardButton redGradient">@Ajax.ActionLink("Add To Basket", "Add", "Basket", new { productId = Model.Product.ID, quantity = 1 }, new AjaxOptions { UpdateTargetId = "basket", HttpMethod = "Post" })</div>
+        <div class="standardButton redGradient">
+            Add to Wishlist</div>
+        <div class="standardButton redGradient">@Html.ActionLink("See More", "Index", "Product", new { id = Model.Product.ID }, null)</div>
+    </div>
+    <div class="clear-fix-all">
+    </div>
+    <h2 class="trigger box">
+        <a href="#">Reviews and Ratings</a></h2>
+    <div id="reviewContainer" class="toggle_container box right-float">
+        @if (Model.Review != null)
+        {
+            Html.RenderPartial("../Review/Ajax/Index", Model);
+        }
+        else
+        {
+            <div>
+                This product has not yet been reviewed. @Ajax.ActionLink("Be the first to write a review", "Create", "Review", new { productId = Model.Product.ID }, new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "reviewContainer" })</div>
+        }
+    </div>
+    <script language="javascript" type="text/javascript">
+        Seadragon.Config.imagePath = "@Model.Product.DeepZoomControlImages/";
+        var viewer = new Seadragon.Viewer("zoomContainer");
+        viewer.openDzi("/Image/Zoom/@Model.Product.Image");
+    </script>
+    <script language="javascript">
+        $(document).ready(function () {
+
+            //Hide (Collapse) the toggle containers on load
+            $(".toggle_container").hide();
+
+            //Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+            $("h2.trigger").click(function () {
+                $(this).toggleClass("active").next().slideToggle("slow");
+                return false; //Prevent the browser jump to the link anchor
+            });
+
+        });
+
+        $('div.rateit').rateit();
+    </script>
+</div>

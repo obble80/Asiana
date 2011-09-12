@@ -1,0 +1,30 @@
+@model Asiana.Shopping.Services.Orders.Order
+@using Asiana.UI.Extensions
+<div style="background-color: #fff;border-radius:4px;-moz-border-radius: 4px; -webkit-border-radius: 4px">
+<img src="@Url.RemoteUrl("/content/mail/logo.jpg", false)" alt="Fashinon" />
+</div>
+<h1 style="color:#fff;">
+    Thank you <em>@Model.Customer.FirstName</em> for your order.</h1>
+<p style="color:#fff;">
+    Your had been recieved and processed and will be shipped within 24 hours.</p>
+<p style="color:#fff;">
+    Your order will be shipped via @Model.ShippingMethod.Carrier via @Model.ShippingMethod.Service</p>
+<p style="color:#fff;">
+    Your order should arrive between @DateTime.Now.AddDays(Model.ShippingMethod.MinDays).ToLongDateString()
+    and @DateTime.Now.AddDays(Model.ShippingMethod.MaxDays).ToLongDateString()</p>
+<h2 style="color:#fff;">
+    You ordered</h2>
+
+<div style="background-color:#fff;">
+@foreach (var item in @Model.Items)
+{
+    <div class="image">
+        <img src="@Url.Abs("/Image/Size/" + @item.Image as string + "/80/80")" alt="@item.Name"/></div>
+    <div class="details">
+        <h4>@item.Name</h4>
+    </div>
+}
+</div>
+
+<p>Thanks for shopping with Fashinon. We look forward to seeing you again</p>
+<!-- NOTE: This example email requires editing and localisation -->

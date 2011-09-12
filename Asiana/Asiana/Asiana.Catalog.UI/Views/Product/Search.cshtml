@@ -1,0 +1,33 @@
+﻿  @{
+      Layout = "~/Views/Shared/_DialogLayout.cshtml";
+  }
+  <div data-role="content" class="ui-body">
+   <div class="content-primary">
+@*        <form class="ui-listview-filter ui-bar-b" role="search">
+        <div class="ui-input-search ui-shadow-inset ui-btn-corner-all ui-btn-shadow ui-icon-searchfield ui-body-b">
+            <input placeholder="Search people..." data-type="search" class="ui-input-text ui-body-null"><a
+                title="clear text" class="ui-input-clear ui-btn ui-btn-up-b ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-input-clear-hidden"
+                href="#" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">clear
+                    text</span><span class="ui-icon ui-icon-delete ui-icon-shadow"></span></span></a></div>
+        </form>*@
+        <ul data-filter-theme="b" data-filter-placeholder="Search people..." data-filter="true"
+            data-role="listview" class="ui-listview">
+            <li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-b">
+                S</li>
+            @foreach (dynamic product in Model.Documents)
+            {
+               @* @Ajax.ActionLink("Edit", "Edit", new { id = product.ID }, new AjaxOptions() { UpdateTargetId = "editView", HttpMethod = "POST" })
+                foreach (var name in product.GetDynamicMemberNames())
+                {*@
+                <li data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li">
+                    <div class="ui-btn-inner ui-li">
+                        <div class="ui-btn-text">
+                            <a href="@Url.Action("Edit", "Product", new { id = product.ID })" class="ui-link-inherit">@product.Name</a></div>
+                        <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+                    </div>
+                </li>
+                //}
+            }
+        </ul>
+    </div>
+    </div>

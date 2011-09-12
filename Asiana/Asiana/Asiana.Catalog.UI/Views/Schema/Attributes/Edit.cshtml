@@ -1,0 +1,21 @@
+﻿@model Asiana.Catalog.UI.Models.NewAttributeModel
+@{
+    ViewBag.Title = "Edit";
+}
+<h2>
+    Edit</h2>
+@using (Ajax.BeginForm("NewAttribute",new AjaxOptions() { UpdateTargetId = "listView", HttpMethod = "Post" }))
+{
+    //@Html.EditorFor(x => x.Attribute)
+    @Html.TextBoxFor(x=>x.Attribute.Name)
+    @Html.DropDownListFor(x => x.Attribute.BaseType, new SelectList(Model.BaseTypes))
+    @Html.DropDownListFor(x => x.Attribute.SolrType, new SelectList(Model.BaseTypes))
+    @Html.DropDownListFor(x => x.Attribute.EditorType, new SelectList(Model.Editors))
+    @Html.DropDownListFor(x => x.Attribute.NavigationRenderer, new SelectList(Model.Renderers))
+    @Html.DropDownListFor(x => x.Attribute.PageRenderer, new SelectList(Model.Renderers))
+
+    @Html.CheckBoxFor(x => x.Attribute.Searchable);
+    @Html.CheckBoxFor(x => x.Attribute.Wildcardable);
+    @Html.CheckBoxFor(x => x.Attribute.Navigable);
+    <input type="submit" value="Save" />
+}

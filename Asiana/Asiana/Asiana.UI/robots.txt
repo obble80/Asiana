@@ -1,0 +1,7 @@
+﻿User-agent: *
+Disallow: /Account/
+Disallow: /Content/
+Disallow: /Order/
+Disallow: /Pay/
+Disallow: /Image/
+Disallow: /Basket/

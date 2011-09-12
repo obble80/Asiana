@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<shippingRates>
+  <type name="Packet">
+    <type name="First Class">
+      <rate weightMin="0" weightMax="100" price="1.58" currency="GBP"/>
+      <rate weightMin="101" weightMax="250" price="1.96" currency="GBP"/>
+    </type>
+  </type>
+  <type name="Parcel">
+    
+  </type>
+</shippingRates>

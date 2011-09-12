@@ -1,0 +1,29 @@
+﻿@model Asiana.UI.Models.PageModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="content">
+        <div id="leftNavigation">
+            @{Html.RenderPartial("Navigation/NavigationList", Model.Response);}
+        </div>
+
+    <div id="products">
+     @{Html.RenderPartial("Navigation/Pager", Model.Response);}
+        <div class="wrapper">
+            @{Html.RenderPartial("Navigation/RecordsList", Model.Response.Documents);}
+            <div class="clear">
+            </div>
+        </div>
+        @{Html.RenderPartial("Navigation/Pager", Model.Response);}
+    </div>
+   
+</div>
+@section TopNavigation {
+    @{Html.RenderPartial("Navigation/TopNavigationList", Model.TopNavigation);}
+}
+@section Basket {
+    @{Html.RenderPartial("Basket/MiniBasket", Model.Basket);}
+}
+@section BreadCrumb {
+    @{Html.RenderPartial("Navigation/BreadCrumbList", Model.Response);}
+}

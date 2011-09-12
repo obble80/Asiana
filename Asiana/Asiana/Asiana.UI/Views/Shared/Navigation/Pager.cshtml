@@ -1,0 +1,41 @@
+﻿@model Asiana.Catalog.Search.Solr.Client.SolrResponse
+@using Asiana.UI.Extensions
+
+@{
+    Layout = null;
+}
+
+<div class="pager">
+<ul class="pagination">
+<li class="group">Pages</li>
+@if (Model.Header.Page == 1)
+{
+    <li class="previous-off">&lt;&lt Previous</li>
+}
+else
+{
+    <li class="previous"><a href="@Url.Action("Index", "Browse", new { page = Model.Header.Page -1, path = SolrNavigation.BuildNavigationLink(Model) })" rel="nofollow">&lt;&lt Previous</a></li>
+}
+@for (int i = 1; i != Model.Header.Pages + 1; i++)
+{
+    
+    <li @Html.Css("active", Model.Header.Page == i)> <a href="@Url.Action("Index", "Browse", new { page = i, path = SolrNavigation.BuildNavigationLink(Model) })" rel="nofollow">@i</a></li>
+}
+@if (Model.Header.Page < Model.Header.Pages)
+{
+<li class="next"><a href="@Url.Action("Index", "Browse", new { page = Model.Header.Page + 1, path = SolrNavigation.BuildNavigationLink(Model) })" rel="nofollow">Next &gt;&gt;</a></li>
+}
+else
+{
+    <li class="next-off">Next &gt;&gt;</li>
+}
+<li class="group">Page Size</li>
+<li><a href="@Url.Action("Index", "Browse", new { page = 1,pageSize = 2, path = SolrNavigation.BuildNavigationLink(Model) })" rel="nofollow">2</a></li>
+<li><a href="@Url.Action("Index", "Browse", new { page = 1,pageSize = 5, path = SolrNavigation.BuildNavigationLink(Model) })" rel="nofollow">5</a></li>
+<li><a href="@Url.Action("Index", "Browse", new { page = 1,pageSize = 10, path = SolrNavigation.BuildNavigationLink(Model) })" rel="nofollow">10</a></li>
+<li><a href="@Url.Action("Index", "Browse", new { page = 1,pageSize = 20, path = SolrNavigation.BuildNavigationLink(Model) })" rel="nofollow">20</a></li>
+<li><a href="@Url.Action("Index", "Browse", new { page = 1,pageSize = 50, path = SolrNavigation.BuildNavigationLink(Model) })" rel="nofollow">50</a></li>
+<li><a href="@Url.Action("Index", "Browse", new { page = 1,pageSize = 100, path = SolrNavigation.BuildNavigationLink(Model) })" rel="nofollow">100</a></li>
+</ul>
+<div class="clear-fix-all"></div>
+</div>

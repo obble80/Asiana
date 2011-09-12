@@ -1,0 +1,88 @@
+﻿@model Asiana.Shopping.Services.Orders.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+
+<div id="tabs">
+<ul>
+		<li><a href="#order">Order</a></li>
+		<li><a href="#payment">Payment</a></li>
+		<li><a href="#customer">Customer</a></li>
+        <li><a href="#shipping">Shipping</a></li>
+</ul>
+<div id="order">
+    <h2>Order</h2>
+
+    <div class="display-label">Status</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Status)
+    </div>
+
+    <div class="display-label">Customer</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Customer.Title)
+    </div>
+
+    <div class="display-label">TotalWeight</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TotalWeight)
+    </div>
+
+    <div class="display-label">SubTotal</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SubTotal)
+    </div>
+
+    <div class="display-label">Tax</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tax)
+    </div>
+
+    <div class="display-label">TaxRate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TaxRate)
+    </div>
+
+    <div class="display-label">GrandTotal</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GrandTotal)
+    </div>
+
+    @foreach (var item in Model.Items)
+    {
+        @Html.DisplayFor(o => item)
+    }
+</div>
+
+<div id="payment">
+    <h2>Payment</h2>
+    @Html.DisplayFor(model => model.Payment)
+    @Html.ActionLink("Refund","Refund", new { id=Model.OrderID})
+</div>
+<div id="customer">
+    <h2>Customer</h2>
+    @Html.DisplayFor(model => model.Customer)
+</div>
+<div id="shipping">
+    <h2>Shipping</h2>
+    @Html.DisplayFor(model => model.ShippingAddress)
+    @Html.DisplayFor(model => model.ShippingMethod)
+</div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.OrderID }) |
+    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Ship Order", "Ship")
+    @Html.ActionLink("Cancel Order", "Cancel")
+    @Html.ActionLink("Reply to Customer", "Reply")
+</p>
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+	</script>

@@ -1,0 +1,40 @@
+﻿@model Asiana.Catalog.UI.Models.NewProductTypeModel
+@using Asiana.Catalog.UI.Extensions
+
+<div id="editView">
+@using (Ajax.BeginForm(new AjaxOptions() { UpdateTargetId="editView", HttpMethod="POST"}))
+{
+<table>
+<tr>
+<th>@Html.LabelFor(x => x.Attributes.FirstOrDefault().Name)</th>
+<th>@Html.LabelFor(x => x.Attributes.FirstOrDefault().BaseType)</th>
+<th>@Html.LabelFor(x => x.Attributes.FirstOrDefault().SolrType)</th>
+<th>@Html.LabelFor(x => x.Attributes.FirstOrDefault().EditorType)</th>
+<th>@Html.LabelFor(x => x.Attributes.FirstOrDefault().NavigationRenderer)</th>
+<th>@Html.LabelFor(x => x.Attributes.FirstOrDefault().PageRenderer)</th>
+<th>Edit</th>
+</tr>
+<tbody>
+@{
+    var attributeList = Model.Attributes.ToList();
+}
+@foreach (var attribute in attributeList)
+{
+    <tr>
+        <td><input type="checkbox" name="attributes" value="@attribute.Name" /></td>
+        <td>@attribute.Name</td>
+        <td>@attribute.BaseType</td>
+        <td>@attribute.SolrType</td>
+        <td>@attribute.EditorType</td>
+        <td>@attribute.NavigationRenderer</td>
+        <td>@attribute.PageRenderer</td>
+    </tr>
+}
+</tbody>
+</table>
+
+@Html.EditorFor(x => x.ProductType)
+
+<input type="submit" value="Save" />
+}
+</div>

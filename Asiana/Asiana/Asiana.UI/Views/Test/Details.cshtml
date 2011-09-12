@@ -1,0 +1,40 @@
+﻿@model Asiana.Shopping.Services.Orders.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Order</legend>
+
+    <div class="display-label">TotalWeight</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TotalWeight)
+    </div>
+
+    <div class="display-label">SubTotal</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SubTotal)
+    </div>
+
+    <div class="display-label">Tax</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tax)
+    </div>
+
+    <div class="display-label">TaxRate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TaxRate)
+    </div>
+
+    <div class="display-label">GrandTotal</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GrandTotal)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

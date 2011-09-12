@@ -1,0 +1,43 @@
+﻿@model Asiana.UI.Models.PageModel
+<div class="standardButton redGradient float-right whiteText">@Ajax.ActionLink("Create a Review", "Create", "Review", new { productId = Model.Product.ID }, new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "reviewContainer" })</div>
+<div class="block">
+    <h3 class="whiteText">
+        Reviews</h3>
+    <div class="reviews">
+        @foreach (var review in Model.Review.Reviews)
+        {
+            <div class="review">
+                <div class="scores section">
+                    <div class="labels float-left">
+                        <li>Design:</li>
+                        <li>Quality:</li>
+                        <li>Value:</li>
+                    </div>
+                    <div class="stars float-left">
+                        <div>
+                            <div class="rateit" data-rateit-value="@review.DesignRating" data-rateit-readonly="true">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="rateit" data-rateit-value="@review.QualityRating" data-rateit-readonly="true">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="rateit" data-rateit-value="@review.ValueRating" data-rateit-readonly="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail section">
+                    <div>
+                        &quot;@review.FullComment&quot;</div>
+                    <div>
+                        - @review.UserNickname</div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script language="javascript">
+    $('div.rateit').rateit();
+</script>

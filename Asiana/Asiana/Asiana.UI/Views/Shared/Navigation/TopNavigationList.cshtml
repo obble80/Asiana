@@ -1,0 +1,15 @@
+﻿@model System.Xml.Linq.XElement
+@using Asiana.UI.Extensions
+<li>@Html.ActionLink("Home", "Index", "Home")&nbsp;|&nbsp;</li>
+        @foreach (var department in Model.Elements("node"))
+        {
+            <li>@Html.HtmlActionLink(@<span class="nav-tab">@department.Attribute("name").Value</span>, "Index","Browse", new { path = department.Attribute("url").Value }, null)|
+                <div class="sub ui-corner-bottom redGradient"><div class="inner"><ul>
+                @foreach (var category in department.Elements("node"))
+                {
+                    <li>@Html.ActionLink(@category.Attribute("name").Value, "Index","Browse", new { path = category.Attribute("url").Value }, null)</li>
+                }
+                </ul><div class="clear-fix-all"></div></div></div>
+            </li>        
+        }
+       

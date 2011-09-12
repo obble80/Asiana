@@ -1,0 +1,14 @@
+﻿@model Asiana.UI.Models.CheckoutModel
+@using Asiana.UI.Extensions
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+<h2>
+    Your Order Summary</h2>
+   @{Html.RenderPartial("OrderSummary", Model);}
+</div>
+@section TopNavigation {
+    @{Html.RenderPartial("Navigation/TopNavigationList", Model.TopNavigation);}
+}

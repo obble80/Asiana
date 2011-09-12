@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ProductType>
+@using Asiana.Catalog.Schema.Types
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @Ajax.ActionLink("Create New", "NewType",new AjaxOptions() { UpdateTargetId="editView", HttpMethod="POST", InsertionMode = InsertionMode.Replace})
+</p>
+<div id="listView">
+<table>
+<tr>
+<th>Type</th>
+</tr>
+<tbody>
+@foreach (var type in Model)
+{
+    <tr>
+        <td>@type.Name</td>
+    </tr>
+}
+</tbody>
+</table>
+</div>
+<div id="editView"></div>

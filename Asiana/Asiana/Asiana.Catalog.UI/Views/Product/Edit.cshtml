@@ -1,0 +1,32 @@
+﻿@model Asiana.Catalog.Schema.Types.Product
+@{ 
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+}
+<div data-role="content" class="ui-body ui-body-a">
+   <div class="content-primary">
+<h2>
+    Edit</h2>
+
+@using (Html.BeginForm("Edit","Product",FormMethod.Post))
+{
+    
+    <input type="hidden" name="productType" value="@Model.Schema.Name" />
+   @* <div data-role="collapsible-set">*@
+        foreach (var group in Model.Schema.Attributes.GroupBy(x => x.Category))
+        {
+           @* <div data-role="collapsible">*@
+                <h3>@group.Key</h3>
+                foreach (var attribute in group)
+                {
+                    <div data-role="fieldcontain">
+                        <label for="@attribute.GetLocalisedName(Model.EditorCulture)">@attribute.Name</label>
+                        <input type="text" name="@attribute.GetLocalisedName(Model.EditorCulture)" value="@Model[@attribute.Name]"/>
+                    </div>
+                }
+            @*</div>*@
+        }
+   @* </div>*@
+    <input type="submit" value="Save" />
+}
+</div>
+</div>

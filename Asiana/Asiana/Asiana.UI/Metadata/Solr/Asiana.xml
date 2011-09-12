@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <precedenceRules>
+    <rule facet="Department" value="" destination="Category"/>
+  </precedenceRules>
+  <facets>
+    <facet name="Price" type="Query" renderer="List">
+      <facetQueries>
+        <facetQuery en-GB="£0 to £5" query="[0 TO 5]">
+          <facetQueries>
+            <facetQuery en-GB="£0 to £1" query="[0 TO 1]"/>
+            <facetQuery en-GB="£1 to £2" query="[1 TO 2]"/>
+            <facetQuery en-GB="£2 to £3" query="[2 TO 3]"/>
+            <facetQuery en-GB="£3 to £4" query="[3 TO 4]"/>
+          </facetQueries>
+        </facetQuery>
+        <facetQuery en-GB="£5 to £10" query="[5 TO 10]">
+          <facetQueries>
+            <facetQuery en-GB="£5 to £6" query="[5 TO 6]"/>
+            <facetQuery en-GB="£6 to £7" query="[6 TO 7]"/>
+            <facetQuery en-GB="£7 to £8" query="[7 TO 8]"/>
+            <facetQuery en-GB="£9 to £10" query="[9 TO 10]"/>
+          </facetQueries>
+        </facetQuery>
+       </facetQueries>
+      </facet>
+    <facet name="Color" type="Field" renderer="ColorPalette"/>
+    <facet name="Department" type="Field" renderer="List" initialValues="7" more="true"/>
+    <facet name="Category" type="Field" renderer="List"/>
+    <facet name="Manufacturer" type="Field" renderer="List"/>
+    <facet name="Country" type="Field" renderer="List"/>
+    <facet name="Region" type="Field" renderer="List"/>
+    <facet name="Material" type="Field" renderer="List"/>
+  </facets>
+</configuration>

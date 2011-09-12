@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="https://deploy.fashinon.co.uk:8172/MsDeploy.axd" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="Fashinon" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="True" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="MSDeploy" replaceMatchingFiles="True" userName="DSVR015274\Administrator" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlXLrhwwFwkOaf9F1GPdLCAAAAAACAAAAAAADZgAAwAAAABAAAAC8GjSMTb+nEGHf8pEyqHEQAAAAAASAAACgAAAAEAAAAKp+lXhrQ2kdNMm8wB/1/scYAAAAxNmdW7Uk4LHSbitJRlvTXgNfQZCFgXZVFAAAABuwFlmdpE6wDxU0gmBXlkfQQkg0" SelectedForPublish="True" />
+</publishData>

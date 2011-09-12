@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AttributeDefinition>
+@using Asiana.Catalog.Schema.Types
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @Ajax.ActionLink("Create New", "NewAttribute",new AjaxOptions() { UpdateTargetId="editView", HttpMethod="POST", InsertionMode = InsertionMode.Replace})
+</p>
+<div id="listView">
+<table>
+<tr>
+<th>@Html.LabelFor(x => x.FirstOrDefault().Name)</th>
+<th>@Html.LabelFor(x => x.FirstOrDefault().BaseType)</th>
+<th>@Html.LabelFor(x => x.FirstOrDefault().SolrType)</th>
+<th>@Html.LabelFor(x=>x.FirstOrDefault().EditorType)</th>
+<th>@Html.LabelFor(x=>x.FirstOrDefault().NavigationRenderer)</th>
+<th>@Html.LabelFor(x=>x.FirstOrDefault().PageRenderer)</th>
+<th>Edit</th>
+</tr>
+<tbody>
+@foreach (var attribute in Model)
+{
+    <tr>
+        <td>@attribute.Name</td>
+        <td>@attribute.BaseType</td>
+        <td>@attribute.SolrType</td>
+        <td>@attribute.EditorType</td>
+        <td>@attribute.NavigationRenderer</td>
+        <td>@attribute.PageRenderer</td>
+        <td>@Ajax.ActionLink("Edit", "EditAttribute", new { Name = attribute.Name},new AjaxOptions() { UpdateTargetId = "editView" })</td>
+    </tr>
+}
+</tbody>
+</table>
+</div>
+<div id="editView"></div>

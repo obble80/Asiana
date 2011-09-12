@@ -1,0 +1,130 @@
+﻿@model Asiana.UI.Models.PageModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="content">
+    @using (Html.BeginForm("Update", "Basket"))
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Remove
+                    </th>
+                    <th>
+                        Subtotal
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Basket.Items)
+                {
+                    <tr>
+                        <td>
+                            <img src="/Image/Size/@item.Image/80/80" alt="@item.Name" />
+                        </td>
+                        <td>@item.Name
+                        </td>
+                        <td>@item.Price.ToString("c")
+                        </td>
+                        <td>
+                            @Html.Hidden("products[" + Model.Basket.Items.IndexOf(item) + "].ProductID", item.ProductID)
+                            @Html.DropDownList("products[" + Model.Basket.Items.IndexOf(item) + "].Quantity", new SelectList(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, item.Quantity), new { @class = "basketQuantity" })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Remove", "Remove", new { productID = item.ProductID })
+                        </td>
+                        <td>@item.Total.ToString("c")
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">
+                        &nbsp;
+                    </td>
+                    <td>
+                        Subtotal:
+                    </td>
+                    <td>@Model.Basket.SubTotal.ToString("c")
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        &nbsp;
+                    </td>
+                    <td>
+                        Discounts:
+                    </td>
+                    <td>
+                        @Model.Basket.Discounts.ToString("c")
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        &nbsp;
+                    </td>
+                    <td>
+                        Delivery <em>(Estimated)</em>:
+                    </td>
+                    <td>
+                        @Model.Basket.DeliveryTotal.ToString("c") 
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        &nbsp;
+                    </td>
+                    <td>
+                        VAT @@ @Model.Basket.TaxRate%:
+                    </td>
+                    <td>
+                        @if (Model.Basket.TaxInclusive)
+                        { <span>VAT Inclusive</span> }
+                        else
+                        {
+                            @Model.Basket.Tax.ToString("c")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        &nbsp;
+                    </td>
+                    <td>
+                        Grand Total:
+                    </td>
+                    <td>@Model.Basket.GrandTotal.ToString("c")
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <input type="submit" name="Update" value="Update" class="smallButton" id="Update" />
+        <input type="submit" name="Checkout" value="Checkout" class="smallButton" id="Checkout" />
+    }
+    
+    @using (Html.BeginForm("Pay", "PayPal", FormMethod.Post, new { @class = "payPalCheckout" }))
+    {
+        <input type='image' name='submit' src='https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif'
+            border='0' align='top' alt='Check out with PayPal' />
+    }
+</div>
+@section TopNavigation {
+    @{Html.RenderPartial("Navigation/TopNavigationList", Model.TopNavigation);}
+}
+@section Basket {
+    @{Html.RenderPartial("Basket/MiniBasket", Model.Basket);}
+}

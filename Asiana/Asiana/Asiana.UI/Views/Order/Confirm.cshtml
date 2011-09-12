@@ -1,0 +1,117 @@
+﻿@model Asiana.UI.Models.CheckoutModel
+@{
+    ViewBag.Title = "Confirm";
+}
+@section TopNavigation {
+    @{Html.RenderPartial("Navigation/TopNavigationList", Model.TopNavigation);}
+}
+<div id="content">
+    <h2>
+        Thank you for your order</h2>
+    <div id="summary">
+        <div id="deliveryAddress">
+            <h3>
+                Delivery Address</h3>
+            <p>
+                Review your delivery address to ensure your order is dispatched to the correct address</p>
+            <dl class="table-display">
+                <dd>@Html.DisplayTextFor(x => x.Order.ShippingAddress.Name)</dd>
+                <dd>@Html.DisplayTextFor(x => x.Order.ShippingAddress.AddressLineOne)</dd>
+                <dd>@Html.DisplayTextFor(x => x.Order.ShippingAddress.Town)</dd>
+                <dd>@Html.DisplayTextFor(x => x.Order.ShippingAddress.County)</dd>
+                <dd>@Html.DisplayTextFor(x => x.Order.ShippingAddress.PostCode)</dd>
+                <dd>@Html.DisplayTextFor(x => x.Order.ShippingAddress.Country)</dd>
+            </dl>
+            <div class="clear-fix-all">
+            </div>
+        </div>
+        <div id="deliveryMethod">
+            <h3>
+                Delivery Options</h3>
+            <p>
+                Your current shipping method is @Model.Order.ShippingMethod.Carrier - @Model.Order.ShippingMethod.Service
+                (@Model.Order.ShippingMethod.MinDays - @Model.Order.ShippingMethod.MaxDays)
+            </p>
+            <p>
+                Your order should arrive between @DateTime.Now.AddDays(Model.Order.ShippingMethod.MinDays).ToLongDateString()
+                and @DateTime.Now.AddDays(Model.Order.ShippingMethod.MaxDays).ToLongDateString()</p>
+            <p>
+                Total shipping cost is @Model.Order.ShippingMethod.Cost.ToString("c")</p>
+        </div>
+        <div id="shipment">
+            <h3>
+                Shipment</h3>
+            <p>
+                These items will be shipped together</p>
+            @foreach (var item in Model.Order.Items)
+            {
+                <div class="image">
+                    <img src="/Image/Size/@item.Image/80/80" /></div>
+                <div class="details">
+                    <h4>@item.Name</h4>
+                </div>
+                <div class="clear-fix-all">
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div id="rightContent">
+    <div id="totals">
+        <table>
+            <tr>
+                <td colspan="3">
+                    &nbsp;
+                </td>
+                <td>
+                    Subtotal:
+                </td>
+                <td>@Model.Order.SubTotal.ToString("c")
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    &nbsp;
+                </td>
+                <td>
+                    Discounts:
+                </td>
+                <td>
+                    £4.99
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    &nbsp;
+                </td>
+                <td>
+                    Delivery:
+                </td>
+                <td>
+                    @Model.Order.ShippingMethod.Cost.ToString("c")
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    &nbsp;
+                </td>
+                <td>
+                    Tax @@ @Model.Order.TaxRate%:
+                </td>
+                <td>
+                    @Model.Order.Tax.ToString("c")
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    &nbsp;
+                </td>
+                <td>
+                    Grand Total:
+                </td>
+                <td>@Model.Order.GrandTotal.ToString("c")
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Ajax.ActionLink("New Attribute", "NewAttribute", new AjaxOptions() { HttpMethod = "POST", UpdateTargetId = "currentDialogContent", OnSuccess="showDialog" })
+
+@using (Ajax.BeginForm("UpdateSchema", new AjaxOptions() { HttpMethod = "POST", Confirm = "Are you sure?", UpdateTargetId="results" }))
+{
+    @Html.TextBox("test", "Test")
+    @Html.Label("Value")
+    <input type="submit" name="submit" />
+}
+
+Results:
+<div id="results">
+</div>
+
+
+<div id="currentDialogContent" style="">
+</div>
+

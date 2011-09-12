@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Asiana.Catalog.Schema.Types.ProductType>
+@{ 
+      Layout = "~/Views/Shared/_DialogLayout.cshtml";
+}
+@using (Html.BeginForm("Edit","Product"))
+{
+    @Html.DropDownList("ProductType", new SelectList(Model, "Name", "Name"))<input type="submit" value="New Product" />
+}

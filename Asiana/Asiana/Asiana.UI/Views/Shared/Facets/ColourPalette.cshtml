@@ -1,0 +1,13 @@
+﻿@model Asiana.Catalog.Search.Solr.Client.SolrFacet
+@using Asiana.UI.Extensions
+@{
+    Layout = null;
+}
+@Model.Name
+
+<div class="facetColorPalette">
+@foreach (var value in Model.Values)
+{
+     <div class="facetColorPaletteItemContainer">@Html.HtmlActionLink(@<div style="background-color: @Colour.NamedColourToHex(@value.Name)" class="facetColorPaletteItem"></div>, "Index", "Browse", new { path = SolrNavigation.BuildNavigationLink(Model.Response, value) }, new { rel = "nofollow" })</div>
+}
+</div>

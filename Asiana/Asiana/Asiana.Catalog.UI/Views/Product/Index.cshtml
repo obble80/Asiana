@@ -1,0 +1,17 @@
+﻿@model Asiana.Catalog.Search.Solr.Client.SolrResponse
+@{
+    ViewBag.Title = "Product";
+}
+<div data-role="content">
+    <h1>
+        Catalog Editor</h1>
+   @* @{Html.RenderAction("Locales", "Editor");}
+    @{Html.RenderAction("New");}
+    @Ajax.ActionLink("New Product", "New", new AjaxOptions() { UpdateTargetId = "editView" })*@
+    <h2>
+        Product</h2>
+    <a href="@Url.Action("Search")" data-role="button" data-icon="search" data-rel="dialog">Product Search</a><a href="@Url.Action("New","Product")" data-role="button" data-icon="plus" data-rel="dialog">New Product</a>
+    <div id="editView">
+    </div>
+</div>
+<!-- /content -->

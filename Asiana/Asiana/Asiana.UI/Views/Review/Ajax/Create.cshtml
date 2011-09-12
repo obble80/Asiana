@@ -1,0 +1,43 @@
+﻿@using (Ajax.BeginForm(new AjaxOptions() { UpdateTargetId = "reviewContainer" }))
+{
+    <input type="submit" value="Submit Review" class="smallButton redGradient float-right whiteText" />
+    <input type="hidden" name="productId" value = "@ViewBag.ProductID" />
+    <div class="block">
+        <h3>
+            Write a review</h3>
+        <div class="reviews">
+            <div class="review">
+                <div class="scores section">
+                    <div class="labels float-left">
+                        <ul>
+                            <li>Design:</li>
+                            <li>Quality:</li>
+                            <li>Value:</li> 
+                        </ul>
+                    </div>
+                    <div class="stars float-left">
+                        <div>
+                            <input type="range" min="0" max="5" value="0" step="0.5" id="designRating" name="designRating" />
+                            <div class="stacked rateit" data-rateit-backingfld="#designRating" />
+                        </div>
+                        <div>
+                            <input type="range" min="0" max="5" value="0" step="0.5" id="qualityRating" name="qualityRating" />
+                            <div class="rateit" data-rateit-backingfld="#qualityRating" />
+                        </div>
+                        <div>
+                            <input type="range" min="0" max="5" value="0" step="0.5" id="valueRating" name="valueRating" />
+                            <div class="stacked rateit" data-rateit-backingfld="#valueRating" />
+                        </div>
+                    </div>
+                </div>
+                <div class="detail section">
+                    <div>
+                        <textarea class="box" name="comment" cols="30" rows="5"></textarea></div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script language="javascript">
+    $('div.rateit').rateit();
+</script>

@@ -1,0 +1,46 @@
+﻿@model Asiana.Shopping.Services.Basket.Basket
+@{
+    Layout = null;
+}
+<div class="minibasket" data-toggle-source="true" data-toggle-target=".items">
+    <div class="header">
+        <div class="total">
+            <p>
+                Your Basket (@Model.Items.Count items)
+            </p>
+            <p>
+                <span class="totalAmount"><a href="#">@Model.SubTotal.ToString("c")</a></span>
+            </p>
+        </div>
+        <div class="checkout">
+            @Html.ActionLink("Checkout", "Index", "Basket", null, new { @class = "smallButton" })
+        </div>
+        <div class="clear-fix-all">
+        </div>
+    </div>
+    <div class="clear-fix-all">
+    </div>
+    <div class="items redGradient">
+        <div class="inner">
+        <div class="spacer"></div>
+        @foreach (var basketItem in Model.Items)
+        {
+            <div>
+                <div class="image">
+                    <img src="/Image/Size/@basketItem.Image/80/80" /></div>
+                <div class="name">
+                    <p>@Ajax.ActionLink(@basketItem.Name, "Remove", "Basket", new { productId = basketItem.ProductID }, new AjaxOptions() { UpdateTargetId = "basket", HttpMethod = "Post" })</p>
+                    <p>@basketItem.Total.ToString("c")</p>
+                </div>
+                <div class="clear-fix-all">
+                </div>
+            </div>
+        
+        }
+        </div>
+    </div>
+</div>
+<script language="javascript">
+    $(".total a").click().delay(800);
+
+</script>

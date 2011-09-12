@@ -1,0 +1,132 @@
+﻿ @model Asiana.UI.Models.CheckoutModel
+ @using Asiana.UI.Extensions
+ <div id="summary">
+            <div id="deliveryAddress">
+                <h3>
+                    Delivery Address</h3>
+                <p>
+                    Review your delivery address to ensure your order is dispatched to the correct address</p>
+                <dl class="table-display">
+                    <dd>@Html.DisplayTextFor(x => x.Order.ShippingAddress.Name)</dd>
+                    <dd>@Html.DisplayTextFor(x => x.Order.ShippingAddress.AddressLineOne)</dd>
+                    <dd>@Html.DisplayTextFor(x => x.Order.ShippingAddress.Town)</dd>
+                    <dd>@Html.DisplayTextFor(x => x.Order.ShippingAddress.County)</dd>
+                    <dd>@Html.DisplayTextFor(x => x.Order.ShippingAddress.PostCode)</dd>
+                    <dd>@Html.DisplayTextFor(x => x.Order.ShippingAddress.Country)</dd>
+                </dl>
+                <div class="clear-fix-all">
+                </div>@Html.ActionLink("Change Billing Address", "Index", "Basket", null, new { @class = "smallButton" })
+            </div>
+            <div id="deliveryMethod">
+                <h3>
+                    Delivery Options</h3>
+                    <p>
+                    Your current shipping method is @Model.Order.ShippingMethod.Carrier - @Model.Order.ShippingMethod.Service (@Model.Order.ShippingMethod.MinDays - @Model.Order.ShippingMethod.MaxDays)
+                    </p><p>Your order should arrive between @DateTime.Now.AddDays(Model.Order.ShippingMethod.MinDays).ToLongDateString() and @DateTime.Now.AddDays(Model.Order.ShippingMethod.MaxDays).ToLongDateString()</p>
+                    <p>Total shipping cost is @Model.Order.ShippingMethod.Cost.ToString("c")</p>
+                @using (Ajax.BeginForm("UpdateShipping", "Order", new AjaxOptions() { HttpMethod = "Post", UpdateTargetId = "content" }))
+                {
+                  
+                    foreach (var method in Model.ShippingMethods)
+                    {
+                    <p>
+                         <input id="shippingMethodId" name="shippingMethodId" type="radio" value="@method.ShippingMethodID" @Html.IsSelected(Model.Order.ShippingMethod, method)/><span>@method.Carrier
+                            - @method.Service @method.Cost.ToString("c") <em>(@method.MinDays - @method.MaxDays working days)</em></span>
+                    </p>
+                    }
+                    <div class="clear-fix-all">
+                    </div><input type="submit" name="UpdateShippingMethod" value="Update Shipping Method" class="smallButton"
+                    id="UpdateShippingMethod" />
+                }
+            </div>
+            <div id="shipment">
+                <h3>
+                    Shipment</h3>
+                <p>
+                    These items will be shipped together</p>
+                @foreach (var item in Model.Order.Items)
+                {
+                    <div class="image">
+                        <img src="/Image/Size/@item.Image/80/80" /></div>
+                    <div class="details">
+                        <h4>@item.Name</h4>
+                    </div>
+                    <div class="clear-fix-all">
+                    </div>
+                }
+            </div>
+
+           
+        </div>
+        <div id="rightContent">
+            <div id="totals">
+                <table>
+                    <tr>
+                        <td colspan="3">
+                            &nbsp;
+                        </td>
+                        <td>
+                            Subtotal:
+                        </td>
+                        <td>@Model.Order.SubTotal.ToString("c")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            &nbsp;
+                        </td>
+                        <td>
+                            Discounts:
+                        </td>
+                        <td>
+                            £4.99
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            &nbsp;
+                        </td>
+                        <td>
+                            Delivery:
+                        </td>
+                        <td>
+                            @Model.Order.ShippingMethod.Cost.ToString("c")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            &nbsp;
+                        </td>
+                        <td>
+                            Tax @@ @Model.Order.TaxRate%:
+                        </td>
+                        <td>
+                            @Model.Order.Tax.ToString("c")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            &nbsp;
+                        </td>
+                        <td>
+                            Grand Total:
+                        </td>
+                        <td>@Model.Order.GrandTotal.ToString("c")
+                        </td>
+                    </tr>
+                </table>
+            
+                 @Html.ActionLink("Pay Now", "Pay", "Order", null, new { @class = "standardButton redGradient" })
+                     <div class="clear-fix-all"></div>
+            </div>
+            <div id="cardsAndCodes">
+                <p>
+                    Enter any gift card numbers or discount vouchers in the field below and then click
+                    apply to add them to your order.
+                </p>
+                <input type="text" value="Gift Card or Voucher Number" id="CardOrVoucher" />
+                <input type="submit" name="UpdateGiftCardOrVoucher" value="Update" class="smallButton"
+                    id="UpdateGiftCardOrVoucher" />
+            </div>
+        </div>
+    </div>

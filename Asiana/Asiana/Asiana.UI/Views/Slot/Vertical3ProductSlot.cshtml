@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Asiana.Catalog.Search.Solr.Client.SolrDocument>
+@using Asiana.UI.Extensions
+@foreach (dynamic record in Model)
+{
+    <!--<div class="black-box">-->
+    <div class="slot-item">
+        <h2>
+            <em>@record.Name</em></h2>
+        <p>
+            @Ajax.HtmlActionLink(@<img class="ui-corner-all" src="/Image/Size/@record.Image/80/80" width="80" height="80"/>, "Index", "Product", new { id = record.ID }, new AjaxOptions { UpdateTargetId = "recordDetailContainer", OnSuccess = "show", HttpMethod = "POST" }, null)
+        </p>
+        <p>@decimal.Parse(record.Price).ToString("c")</p>
+        <p class="addToBasket">@Ajax.ActionLink("Add To Basket", "Add", "Basket", new { productId = record.ID, quantity = 1 }, new AjaxOptions { UpdateTargetId = "basket", HttpMethod = "Post" }, new { rel = "nofollow" })</p>
+        </div>
+    <!--</div>-->
+}

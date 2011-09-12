@@ -1,0 +1,69 @@
+﻿@model Asiana.Catalog.UI.Models.NewAttributeModel
+@using Asiana.Catalog.UI.Extensions;
+@{
+    ViewBag.Title = "Create New Attribute";
+}
+
+<h2>Create New Attribute Type</h2>
+@using (Ajax.BeginForm("SaveAttribute", null, new AjaxOptions() { OnSuccess = "close" }, new { id = "SaveAttribute" }))
+{
+ <fieldset class="ui-widget ui-widget-content ui-corner-all">
+ <legend class="ui-widget-header ui-corner-all">Attribute Common Properties</legend>
+ <p>
+@Html.Label("Name", "Name")
+@Html.TextBox("Name", "", new { placeholder = "Name" })
+</p>
+
+<p>
+@Html.Label("BaseType", "Base Type")
+@Html.DropDownList("BaseType", Model.BaseTypes.ToSelectList(x => x.Name, y => y.FullName))
+</p>
+
+<p>
+@Html.Label("PageRenderer", "Page Renderer")
+@Html.DropDownList("PageRenderer", Model.Renderers.ToSelectList(x => x, y => y))
+</p>
+</fieldset>
+    
+<fieldset class="ui-widget ui-widget-content ui-corner-all">
+ <legend class="ui-widget-header ui-corner-all">Navigation Properties</legend>
+ <p>
+@Html.Label("NavigationRenderer", "Navigation Renderer")
+@Html.DropDownList("NavigationRenderer", Model.Renderers.ToSelectList(x => x, y => y))
+</p>
+</fieldset>
+
+    <fieldset class="ui-widget ui-widget-content ui-corner-all">
+ <legend class="ui-widget-header ui-corner-all">Editor Properties</legend>
+    <p>
+@Html.Label("EditorType", "Editor Type")
+@Html.DropDownList("EditorType", Model.Editors.ToSelectList(x => x, y => y))
+</p>
+
+</fieldset>
+}
+
+<script language="javascript" type="text/javascript">
+    function close() {
+        $('#currentDialogContent').dialog('close');
+    }
+
+    function showDialog() {
+        $('#currentDialogContent').dialog({
+            resizable: true,
+            modal: true,
+            width: 400,
+            height: 450,
+            overlay: { backgroundColor: "#000", opacity: 0.5 },
+             buttons: {
+                "Create Attribute": function() {
+                    $("#SaveAttribute").submit();
+
+                },
+                "Cancel": function() {
+                    $(this).dialog("close");
+                }
+            }
+        });
+    }
+</script>

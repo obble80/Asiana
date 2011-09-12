@@ -1,0 +1,9 @@
+﻿@model Asiana.Catalog.Search.Solr.Client.SolrResponse
+@using Asiana.UI.Extensions
+
+ <li>@Html.ActionLink("Home", "Index", "Home", new { path = "" }, null) &nbsp;&gt;&nbsp;</li>
+@foreach (var item in Model.BreadCrumb)
+{
+    <li>@Html.ActionLink(item.Value, "Index", new { path = SolrNavigation.BuildBreadCrumbLink(Model, item) }) &nbsp;&gt;&nbsp;</li>        
+}
+

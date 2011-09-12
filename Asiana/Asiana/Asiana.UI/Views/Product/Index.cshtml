@@ -1,0 +1,52 @@
+﻿@model Asiana.UI.Models.PageModel
+@{
+    ViewBag.Title = "Product";
+}
+<div id="content">
+    <div id="recordDetail">
+        <div id="images">
+            <div id="zoomContainer">
+            </div>
+            <div id="alternateImages">
+                @if (Model.Product.AlternateImages.Count > 0)
+                {
+                    <div class="smallAlternate">
+                        <a href="#" data-zoom="true" data-zoom-image="/Image/Zoom/@Model.Product.Image">
+                            <img src="/Image/Size/@Model.Product.Image/80/80" /></a></div>
+                    foreach (var image in Model.Product.AlternateImages)
+                    {
+                    <div class="smallAlternate">
+                        <a href="#" data-zoom="true" data-zoom-image="/Image/Zoom/@image">
+                            <img src="/Image/Size/@image/80/80" /></a></div>
+                    }
+                }
+            </div>
+        </div>
+        <div id="detailContainer">
+            <h2>@Model.Product.Name</h2>
+            <p>@Model.Product.Description</p>
+            <h3>
+                Features</h3>
+            <ul>
+                @foreach (var feature in Model.Product.Features)
+                {
+                    <li>@feature</li>
+                }
+            </ul>
+            <div class="standardButton redGradient">@Ajax.ActionLink("Add To Basket", "Add", "Basket", new { productId = Model.Product.ID, quantity = 1 }, new AjaxOptions { UpdateTargetId = "basket", HttpMethod = "Post" })</div>
+            <div class="standardButton redGradient">
+                Add to Wishlist</div>
+        </div>
+        <script language="javascript" type="text/javascript">
+            Seadragon.Config.imagePath = "@Model.Product.DeepZoomControlImages/";
+            var viewer = new Seadragon.Viewer("zoomContainer");
+            viewer.openDzi("/Image/Zoom/@Model.Product.Image");
+        </script>
+    </div>
+</div>
+@section TopNavigation {
+    @{Html.RenderPartial("Navigation/TopNavigationList", Model.TopNavigation);}
+}
+@section Basket {
+    @{Html.RenderPartial("Basket/MiniBasket", Model.Basket);}
+}

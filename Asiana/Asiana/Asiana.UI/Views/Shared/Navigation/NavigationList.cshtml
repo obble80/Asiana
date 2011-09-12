@@ -1,0 +1,26 @@
+﻿@model Asiana.Catalog.Search.Solr.Client.SolrResponse
+           
+@using Asiana.UI.Extensions
+
+<ul>
+@foreach (var item in Model.Facets)
+{
+    if (item.Name == "Color")
+    {
+        {Html.RenderPartial("Facets/ColourPalette", item);}
+    }
+    else
+    {
+     <li>@item.Name
+     <ul>@foreach (var refinement in item.Values)
+         {
+             
+         <li>@Html.ActionLink(String.Format("{0} ({1})", @refinement.Name, @refinement.Count), "Index", "Browse", new { path = SolrNavigation.BuildNavigationLink(Model, refinement) }, new { rel = "nofollow" })</li>
+         
+         }
+     </ul>
+     </li>
+    }
+}
+</ul>
+

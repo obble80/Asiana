@@ -1,0 +1,89 @@
+﻿@model IEnumerable<IGrouping<String, Asiana.Shopping.Services.Orders.Order>>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@foreach (var group in Model)
+{
+    <span>@group.Key</span>
+    <table>
+        <tr>
+            <th>
+                Status
+            </th>
+            <th>
+                Customer
+            </th>
+            <th>
+                TotalWeight
+            </th>
+            <th>
+                SubTotal
+            </th>
+            <th>
+                Tax
+            </th>
+            <th>
+                TaxRate
+            </th>
+            <th>
+                GrandTotal
+            </th>
+            <th>
+                Created
+            </th>
+            <th>
+                Updated
+            </th>
+            <th>
+                Completed
+            </th>
+            <th>
+            </th>
+        </tr>
+        @foreach (var item in group)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalWeight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tax)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaxRate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GrandTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Created)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Updated)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Completed)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.OrderID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.OrderID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.OrderID })
+                </td>
+            </tr>
+        }
+    </table>
+}

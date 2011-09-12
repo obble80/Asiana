@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7EF42118-8432-4227-8826-879D4241F45A}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Asiana.UI</RootNamespace>
+    <AssemblyName>Asiana.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
+    <DeployIisAppPath>Fashinon</DeployIisAppPath>
+    <DeployEncryptKey>Future100</DeployEncryptKey>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Live|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Asiana.UI.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActionMailer.Net">
+      <HintPath>..\packages\ActionMailer.0.5.0\lib\Net40\ActionMailer.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="ajaxmin">
+      <HintPath>..\packages\combres.2.2.1.8\lib\net40\ajaxmin.dll</HintPath>
+    </Reference>
+    <Reference Include="Combres">
+      <HintPath>..\packages\combres.2.2.1.8\lib\net40\Combres.dll</HintPath>
+    </Reference>
+    <Reference Include="Combres.Mvc">
+      <HintPath>..\packages\combres.mvc.2.2.1.8\lib\net40\Combres.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="DeepZoomTools">
+      <HintPath>..\..\..\..\..\..\..\..\seadragon\DeepZoomTools.dll</HintPath>
+    </Reference>
+    <Reference Include="dotless.Core">
+      <HintPath>..\packages\dotless.1.1.0\lib\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET.modified">
+      <HintPath>..\packages\YUICompressor.NET.1.5.0.0\lib\NET35\EcmaScript.NET.modified.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Fasterflect">
+      <HintPath>..\packages\fasterflect.2.0.1\lib\net40\Fasterflect.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.3.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.Entity, Version=6.3.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=6.3.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.2.2.1.0\lib\.NetFramework 4.0\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC3.2.2.1.1\lib\.NetFramework 4.0\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL" />
+    <Reference Include="Norm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Downloads\atheken-NoRM-v0.9.8-0-gad119d1\atheken-NoRM-08fd4bc\NoRM\bin\Debug\Norm.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages" />
+    <Reference Include="System.Web.Helpers" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.4\lib\NETFramework40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>..\packages\YUICompressor.NET.1.5.0.0\lib\NET35\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\Combres.cs" />
+    <Compile Include="AsianaModules.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BasketController.cs" />
+    <Compile Include="Controllers\BrowseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\PayPalController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
+    <Compile Include="Controllers\SlotController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Extensions\Colour.cs" />
+    <Compile Include="Extensions\ContextItem.cs" />
+    <Compile Include="Extensions\ImageExtensions.cs" />
+    <Compile Include="Extensions\SolrNavigation.cs" />
+    <Compile Include="Extensions\UrlExtensions.cs" />
+    <Compile Include="Filters\CompressFilter.cs" />
+    <Compile Include="Filters\MailCSSFilter.cs" />
+    <Compile Include="Filters\MailCSSStream.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Mailers\IUserMailer.cs" />
+    <Compile Include="Mailers\UserMailer.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\CheckoutModel.cs" />
+    <Compile Include="Models\PageModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Results\ImageAction.cs" />
+    <Compile Include="Services\DeepZoomService.cs" />
+    <Compile Include="Services\IDeepZoomService.cs" />
+    <Compile Include="Services\ILogService.cs" />
+    <Compile Include="Services\LogService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\combres.xml" />
+    <Content Include="App_Data\combres_full_with_annotation.xml" />
+    <Content Include="Asiana.UI.Publish.xml" />
+    <Content Include="Content\mail.css" />
+    <Content Include="Content\products\Promotion\100-styles.png" />
+    <Content Include="Content\products\Promotion\3-2-sling-tote.png" />
+    <Content Include="Content\products\Promotion\free-delivery-1.png" />
+    <Content Include="Content\products\Promotion\hand-made-fair-trade.png" />
+    <Content Include="Content\products\Promotion\home-001.png" />
+    <Content Include="Content\products\Source\1000.1.JPG" />
+    <Content Include="Content\products\Source\1000.2.JPG" />
+    <Content Include="Content\products\Source\1001.1.jpg" />
+    <Content Include="Content\products\Source\1002.1.jpg" />
+    <Content Include="Content\products\Source\1002.2.jpg" />
+    <Content Include="Content\products\Source\1003.1.jpg" />
+    <Content Include="Content\products\Source\1003.2.jpg" />
+    <Content Include="Content\products\Source\1004.1.jpg" />
+    <Content Include="Content\products\Source\1004.2.jpg" />
+    <Content Include="Content\products\Source\1005.1.jpg" />
+    <Content Include="Content\products\Source\1005.2.jpg" />
+    <Content Include="Content\products\Source\1006.1.jpg" />
+    <Content Include="Content\products\Source\1006.2.jpg" />
+    <Content Include="Content\products\Source\1007.1.jpg" />
+    <Content Include="Content\products\Source\1007.2.jpg" />
+    <Content Include="Content\products\Source\1008.1.jpg" />
+    <Content Include="Content\products\Source\1008.2.jpg" />
+    <Content Include="Content\products\Source\1009.1.jpg" />
+    <Content Include="Content\products\Source\1009.2.jpg" />
+    <Content Include="Content\products\Source\1010.1.jpg" />
+    <Content Include="Content\products\Source\1010.2.jpg" />
+    <Content Include="Content\products\Source\1011.1.jpg" />
+    <Content Include="Content\products\Source\1012.1.jpg" />
+    <Content Include="Content\products\Source\1012.2.jpg" />
+    <Content Include="Content\products\Source\1013.1.jpg" />
+    <Content Include="Content\products\Source\1013.2.jpg" />
+    <Content Include="Content\products\Source\1014.1.jpg" />
+    <Content Include="Content\products\Source\1014.2.jpg" />
+    <Content Include="Content\products\Source\1015.1.jpg" />
+    <Content Include="Content\products\Source\1015.2.jpg" />
+    <Content Include="Content\products\Source\1016.1.jpg" />
+    <Content Include="Content\products\Source\1016.2.jpg" />
+    <Content Include="Content\products\Source\1017.1.jpg" />
+    <Content Include="Content\products\Source\1017.2.jpg" />
+    <Content Include="Content\products\Source\1018.1.jpg" />
+    <Content Include="Content\products\Source\1018.2.jpg" />
+    <Content Include="Content\products\Source\1019.1.jpg" />
+    <Content Include="Content\products\Source\1019.2.jpg" />
+    <Content Include="Content\products\Source\1020.1.jpg" />
+    <Content Include="Content\products\Source\1020.2.jpg" />
+    <Content Include="Content\products\Source\1021.1.jpg" />
+    <Content Include="Content\products\Source\1021.2.jpg" />
+    <Content Include="Content\products\Source\1022.1.jpg" />
+    <Content Include="Content\products\Source\1022.2.jpg" />
+    <Content Include="Content\products\Source\1023.1.jpg" />
+    <Content Include="Content\products\Source\1023.2.jpg" />
+    <Content Include="Content\products\Source\1024.1.jpg" />
+    <Content Include="Content\products\Source\1024.2.jpg" />
+    <Content Include="Content\products\Source\1025.1.jpg" />
+    <Content Include="Content\products\Source\1025.2.jpg" />
+    <Content Include="Content\products\Source\1026.1.jpg" />
+    <Content Include="Content\products\Source\1026.2.jpg" />
+    <Content Include="Content\products\Source\1027.1.jpg" />
+    <Content Include="Content\products\Source\1027.2.jpg" />
+    <Content Include="Content\products\Source\1028.1.jpg" />
+    <Content Include="Content\products\Source\1028.2.jpg" />
+    <Content Include="Content\products\Source\1029.1.jpg" />
+    <Content Include="Content\products\Source\1029.2.jpg" />
+    <Content Include="Content\products\Source\1030.1.jpg" />
+    <Content Include="Content\products\Source\1030.2.jpg" />
+    <Content Include="Content\products\Source\1031.1.jpg" />
+    <Content Include="Content\products\Source\1031.2.jpg" />
+    <Content Include="Content\products\Source\1032.1.jpg" />
+    <Content Include="Content\products\Source\1032.2.jpg" />
+    <Content Include="Content\products\Source\1033.1.jpg" />
+    <Content Include="Content\products\Source\1033.2.jpg" />
+    <Content Include="Content\products\Source\1034.1.jpg" />
+    <Content Include="Content\products\Source\1035.2.jpg" />
+    <Content Include="Content\products\Source\1036.2.jpg" />
+    <Content Include="Content\products\Source\1037.1.jpg" />
+    <Content Include="Content\products\Source\1037.2.jpg" />
+    <Content Include="Content\products\Source\1038.1.jpg" />
+    <Content Include="Content\products\Source\1038.2.jpg" />
+    <Content Include="Content\products\Source\1039.1.jpg" />
+    <Content Include="Content\products\Source\1039.2.jpg" />
+    <Content Include="Content\products\Source\1040.1.jpg" />
+    <Content Include="Content\products\Source\1040.2.jpg" />
+    <Content Include="Content\products\Source\1041.1.jpg" />
+    <Content Include="Content\products\Source\1041.2.jpg" />
+    <Content Include="Content\products\Source\1042.1.jpg" />
+    <Content Include="Content\products\Source\1042.2.jpg" />
+    <Content Include="Content\products\Source\123232.jpg" />
+    <Content Include="Content\products\Source\232343.jpg" />
+    <Content Include="Content\products\Source\232434.jpg" />
+    <Content Include="Content\products\Source\503539574_958bc78217_o.jpg" />
+    <Content Include="Content\products\Source\912123.jpg" />
+    <Content Include="Content\products\Source\Default.jpg" />
+    <Content Include="Content\products\Source\IMG_7158.JPG" />
+    <Content Include="Content\products\Source\IMG_7161.JPG" />
+    <Content Include="Content\products\Source\L12952827.jpg" />
+    <Content Include="Content\themes\base\background\background.jpg" />
+    <Content Include="Content\themes\base\background\bg_body.png" />
+    <Content Include="Content\themes\base\background\bg_body_detail.jpg" />
+    <Content Include="Content\themes\base\background\bg_body_detail_v1.jpg" />
+    <Content Include="Content\themes\base\background\shadow-large.png" />
+    <Content Include="Content\themes\base\bg_body_detail_v1.jpg" />
+    <Content Include="Content\themes\base\bg_dash_vert.png" />
+    <Content Include="Content\themes\base\bg_lady1_vert.png" />
+    <Content Include="Content\themes\base\bg_lady2_vert.png" />
+    <Content Include="Content\themes\base\icon_masthead.png" />
+    <Content Include="Content\themes\base\rating\delete.gif" />
+    <Content Include="Content\themes\base\rating\rateit.css" />
+    <Content Include="Content\themes\base\rating\star.gif" />
+    <Content Include="Content\themes\base\seadragon\fullpage_grouphover.png" />
+    <Content Include="Content\themes\base\seadragon\fullpage_hover.png" />
+    <Content Include="Content\themes\base\seadragon\fullpage_pressed.png" />
+    <Content Include="Content\themes\base\seadragon\fullpage_rest.png" />
+    <Content Include="Content\themes\base\seadragon\home_grouphover.png" />
+    <Content Include="Content\themes\base\seadragon\home_hover.png" />
+    <Content Include="Content\themes\base\seadragon\home_pressed.png" />
+    <Content Include="Content\themes\base\seadragon\home_rest.png" />
+    <Content Include="Content\themes\base\seadragon\zoomin_grouphover.png" />
+    <Content Include="Content\themes\base\seadragon\zoomin_hover.png" />
+    <Content Include="Content\themes\base\seadragon\zoomin_pressed.png" />
+    <Content Include="Content\themes\base\seadragon\zoomin_rest.png" />
+    <Content Include="Content\themes\base\seadragon\zoomout_grouphover.png" />
+    <Content Include="Content\themes\base\seadragon\zoomout_hover.png" />
+    <Content Include="Content\themes\base\seadragon\zoomout_pressed.png" />
+    <Content Include="Content\themes\base\seadragon\zoomout_rest.png" />
+    <Content Include="Content\themes\fashion-ie.css" />
+    <Content Include="Content\themes\fancybox\blank.gif" />
+    <Content Include="Content\themes\fancybox\fancybox-x.png" />
+    <Content Include="Content\themes\fancybox\fancybox-y.png" />
+    <Content Include="Content\themes\fancybox\fancybox.png" />
+    <Content Include="Content\themes\fancybox\fancy_close.png" />
+    <Content Include="Content\themes\fancybox\fancy_loading.png" />
+    <Content Include="Content\themes\fancybox\fancy_nav_left.png" />
+    <Content Include="Content\themes\fancybox\fancy_nav_right.png" />
+    <Content Include="Content\themes\fancybox\fancy_shadow_e.png" />
+    <Content Include="Content\themes\fancybox\fancy_shadow_n.png" />
+    <Content Include="Content\themes\fancybox\fancy_shadow_ne.png" />
+    <Content Include="Content\themes\fancybox\fancy_shadow_nw.png" />
+    <Content Include="Content\themes\fancybox\fancy_shadow_s.png" />
+    <Content Include="Content\themes\fancybox\fancy_shadow_se.png" />
+    <Content Include="Content\themes\fancybox\fancy_shadow_sw.png" />
+    <Content Include="Content\themes\fancybox\fancy_shadow_w.png" />
+    <Content Include="Content\themes\fancybox\fancy_title_left.png" />
+    <Content Include="Content\themes\fancybox\fancy_title_main.png" />
+    <Content Include="Content\themes\fancybox\fancy_title_over.png" />
+    <Content Include="Content\themes\fancybox\fancy_title_right.png" />
+    <Content Include="Content\themes\fancybox\jquery.fancybox-1.3.4.css" />
+    <Content Include="Content\themes\fashinon-london.jpg" />
+    <Content Include="Content\themes\fashinon.jpg" />
+    <Content Include="Content\themes\fashion.css" />
+    <Content Include="Content\themes\images\black_bl.gif" />
+    <Content Include="Content\themes\images\black_br.gif" />
+    <Content Include="Content\themes\images\black_tl.gif" />
+    <Content Include="Content\themes\images\black_tr.gif" />
+    <Content Include="Content\themes\images\body_left.jpg" />
+    <Content Include="Content\themes\images\body_left1.jpg" />
+    <Content Include="Content\themes\images\btn_footer.gif" />
+    <Content Include="Content\themes\images\btn_header.gif" />
+    <Content Include="Content\themes\images\cycle-shadow.gif" />
+    <Content Include="Content\themes\images\en\women.png" />
+    <Content Include="Content\themes\images\header_bg.jpg" />
+    <Content Include="Content\themes\images\header_left.jpg" />
+    <Content Include="Content\themes\images\nav_bg.gif" />
+    <Content Include="Content\themes\images\nav_left.gif" />
+    <Content Include="Content\themes\images\nav_right.gif" />
+    <Content Include="Content\themes\images\pic_1.jpg" />
+    <Content Include="Content\themes\images\pic_2.jpg" />
+    <Content Include="Content\themes\images\pic_3.jpg" />
+    <Content Include="Content\themes\images\search.gif" />
+    <Content Include="Content\themes\images\th\women.png" />
+    <Content Include="Content\themes\jcaro-tango.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Metadata\Colours\colours.txt" />
+    <Content Include="Metadata\Endeca\Asiana.dimensions.xml" />
+    <Content Include="Metadata\Navigation.xml" />
+    <Content Include="Metadata\Shipping\RoyalMail.xml" />
+    <Content Include="Metadata\Solr\Asiana.xml" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\asiana.jquery.js" />
+    <Content Include="Scripts\jquery.cycle.all.min.js" />
+    <Content Include="Scripts\jquery.fancybox-1.3.4.js" />
+    <Content Include="Scripts\jquery.fancybox-1.3.4.pack.js" />
+    <Content Include="Scripts\jquery.hoverIntent.js" />
+    <Content Include="Scripts\jquery.hoverIntent.minified.js" />
+    <Content Include="Scripts\jquery.jcarousel.js" />
+    <Content Include="Scripts\jquery.rateit.js" />
+    <Content Include="Scripts\seadragon-min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Basket\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Basket\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Basket\Account\LogOn.cshtml" />
+    <Content Include="Views\Basket\Account\Register.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\products\Sized\" />
+    <Folder Include="Views\Checkout\" />
+    <Folder Include="Views\Product\Mobile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Navigation\NavigationList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Browse\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Navigation\RecordsList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Navigation\TopNavigationList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Navigation\BreadCrumbList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\Ajax\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Asiana.Catalog.Search.Solr.Client\Asiana.Catalog.Search.Solr.Client.csproj">
+      <Project>{CA55E48A-A3BA-4E64-A197-15D26C920B7B}</Project>
+      <Name>Asiana.Catalog.Search.Solr.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Asiana.Mvc\Asiana.Mvc.csproj">
+      <Project>{6B9434BE-19B7-48C2-B8CA-2711C56D71E9}</Project>
+      <Name>Asiana.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Asiana.Profile.Services\Asiana.Profile.Services.csproj">
+      <Project>{6223AC7A-D150-406A-B3DE-9E9585F92545}</Project>
+      <Name>Asiana.Profile.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Asiana.Shopping.Payments.Paypal\Asiana.Shopping.Payments.Paypal.csproj">
+      <Project>{0A11B4DC-4426-4DE5-B5CA-F7F24B199DFA}</Project>
+      <Name>Asiana.Shopping.Payments.Paypal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Asiana.Shopping.Services.Basket\Asiana.Shopping.Services.csproj">
+      <Project>{63D4C64D-6D26-406B-97E8-1D74DACA7945}</Project>
+      <Name>Asiana.Shopping.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Asiana.Site.Services\Asiana.Site.Services.csproj">
+      <Project>{B23D6CDC-CB20-4691-B1C0-C6562EE35402}</Project>
+      <Name>Asiana.Site.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Asiana.UI.Extensions\Asiana.UI.Extensions.csproj">
+      <Project>{3A7EC060-E48F-4E01-9546-F09FA3C27E9C}</Project>
+      <Name>Asiana.UI.Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Facets\ColourPalette.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Basket\MiniBasket.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Basket\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PayPal\IPN.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Order\Shipping.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Test\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Test\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Test\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Test\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Test\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Order\OrderSummary.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Order\Confirm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Navigation\Pager.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserMailer\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserMailer\ConfirmOrder.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.Live.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Review\Ajax\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Review\Ajax\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Slot\Vertical3ProductSlot.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>17000</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://local.fashinon.co.uk</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

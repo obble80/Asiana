@@ -1,0 +1,20 @@
+﻿body {
+}
+
+.editor-control-bounds 
+{
+	width: 260px;
+	border: 1px solid black;
+}
+
+.editor-colourpicker-item
+{
+	float: left;
+	width: 15px;
+	height: 15px;
+	margin: 2px;
+	border: 1px solid black;
+}
+
+fieldset legend { width: 100%; }
+fieldset legend div { margin: 0.3em 0.5em; }

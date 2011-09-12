@@ -1,0 +1,43 @@
+﻿@model Asiana.Shopping.Services.Orders.Order
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Order</legend>
+
+    <div class="display-label">TotalWeight</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TotalWeight)
+    </div>
+
+    <div class="display-label">SubTotal</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SubTotal)
+    </div>
+
+    <div class="display-label">Tax</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tax)
+    </div>
+
+    <div class="display-label">TaxRate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TaxRate)
+    </div>
+
+    <div class="display-label">GrandTotal</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GrandTotal)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

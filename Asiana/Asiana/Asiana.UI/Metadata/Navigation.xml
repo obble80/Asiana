@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<navigation>
+    <node name="House and Home" type="Department" url="/Department/House and Home">
+      <node name="Cushions" type="Category" url="/Department/House and Home/Category/Cushions"/>
+      <node name="Coasters" type="Category" url="/Department/House and Home/Category/Coasters"/>
+    </node>
+    <node name="Bags" type="Department" url="/Department/Bags">
+      <node name="Sling Tote" type="Category" url="/Department/Bags/Category/Sling Tote"/>
+      <node name="Leather" type="Category" url="/Department/Bags/Category/Leather"/>
+    </node>
+    <node name="Jewelery" type="Department" url="/Department/Jewelery">
+      <node name="Bracelets" type="Category" url="/Department/Jewelery/Category/Bracelets"/>
+      <node name="Necklaces" type="Category" url="/Department/Jewelery/Category/Necklaces"/>
+    </node>
+    <node name="Accessories" type="Department" url="/Department/Accessories">
+      <node name="Painted Nails" type="Category" url="/Department/Accessories/Category/Painted Nails"/>
+    </node>
+    <node name="Clearance" type="Department" url="/Department/Clearance"/>
+  </navigation>

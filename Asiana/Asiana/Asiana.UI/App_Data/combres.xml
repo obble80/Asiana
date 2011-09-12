@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  This file contains basic settings needed for most web apps.
+  For full Combres settings (with explanation), refer to the sample definition file: combres_full_with_annotation.xml
+  Also, refer to Combres' documentation: http://combres.codeplex.com/documentation	
+-->
+<combres xmlns='urn:combres'>
+  <filters>
+    <filter type="Combres.Filters.FixUrlsInCssFilter, Combres" />
+  </filters>
+
+  <jsMinifiers>
+    <minifier name="yui" type="Combres.Minifiers.YuiJSMinifier, Combres">
+      <param name="IsVerboseLogging" type="bool" value="false" />
+      <param name="IsObfuscateJavascript" type="bool" value="true" />
+      <param name="PreserveAllSemicolons" type="bool" value="false" />
+      <param name="DisableOptimizations" type="bool" value="false" />
+      <param name="LineBreakPosition" type="int" value="-1" />
+    </minifier>
+    <minifier name="msajax" type="Combres.Minifiers.MSAjaxJSMinifier, Combres" binderType="Combres.Binders.SimpleObjectBinder, Combres">
+      <param name="CollapseToLiteral" type="bool" value="true" />
+      <param name="EvalsAreSafe" type="bool" value="true" />
+      <param name="MacSafariQuirks" type="bool" value="true" />
+      <param name="CatchAsLocal" type="bool" value="true" />
+      <param name="LocalRenaming" type="string" value="CrunchAll" />
+      <param name="OutputMode" type="string" value="SingleLine" />
+      <param name="RemoveUnneededCode" type="bool" value="true" />
+      <param name="StripDebugStatements" type="bool" value="true" />
+    </minifier>
+  </jsMinifiers>
+  
+  <resourceSets url="~/combres.axd"
+                defaultDuration="30"
+                defaultVersion="auto"
+                defaultDebugEnabled="false"
+                defaultIgnorePipelineWhenDebug="true"
+                localChangeMonitorInterval="30"
+                remoteChangeMonitorInterval="60"
+                >
+    
+    <resourceSet name="siteCss" type="css">
+      <resource path="~/content/themes/fashion.css" mode="static"/>
+      <resource path="~/content/themes/base/jquery-ui.css"  mode="static"/>
+      <resource path="~/content/themes/fancybox/jquery.fancybox-1.3.4.css" mode="static"/>
+      <resource path="~/content/themes/jcaro-tango.css" mode="static"/>
+      <resource path="~/content/themes/base/rating/rateit.css" mode="static"/>
+    </resourceSet>
+    <resourceSet name="siteJs" type="js" minifierRef="msajax">
+      <resource path="~/scripts/jquery-1.4.4.js" mode="static"/>
+      <resource path="~/scripts/jquery.unobtrusive-ajax.min.js" minifierRef="off" mode="static"/>
+      <resource path="~/scripts/jquery.fancybox-1.3.4.js" mode="static"/>
+      <resource path="~/scripts/jquery-ui.js" mode="static"/>
+      <resource path="~/scripts/jquery.hoverIntent.js" mode="static"/>
+      <resource path="~/scripts/asiana.jquery.js" mode="static"/>
+      <resource path="~/scripts/seadragon-min.js" minifierRef="off" mode="static"/>
+      <resource path="~/scripts/jquery.jcarousel.js" mode="static"/>
+      <resource path="~/scripts/jquery.cycle.all.min.js" minifierRef="off" mode="static"/>
+      <resource path="~/scripts/jquery.rateit.js" mode="static"/>
+    </resourceSet>
+  </resourceSets>
+</combres>

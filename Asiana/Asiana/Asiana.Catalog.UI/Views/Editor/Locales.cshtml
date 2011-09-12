@@ -1,0 +1,6 @@
+﻿@model IEnumerable<System.Globalization.CultureInfo>
+
+@using (Ajax.BeginForm("SetLocale", new AjaxOptions() { HttpMethod = "Post" }))
+{
+@Html.DropDownList("locale", new SelectList(Model.OrderBy(y => y.DisplayName), "Name", "DisplayName", ViewBag.CurrentCulture.Name)) <input type="submit" value="Change Language" />
+}

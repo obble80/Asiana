@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE DIMENSIONS SYSTEM "dimensions.dtd">
+<DIMENSIONS>
+   <NUM_DVALS>35</NUM_DVALS>
+   <DIMENSION NAME="Top Navigation" SRC_FILE="C:\Endeca\Solutions\Asiana\data\processing\dimensions.xml" SRC_TYPE="INTERNAL">
+      <DIMENSION_ID ID="1"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="1"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">Top Navigation</SYN>
+         </DVAL>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="2"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Bags</SYN>
+            </DVAL>
+            <DIMENSION_NODE>
+               <DVAL TYPE="EXACT">
+                  <DVAL_ID ID="4294967284"/>
+                  <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">1992</SYN>
+               </DVAL>
+            </DIMENSION_NODE>
+            <DIMENSION_NODE>
+               <DVAL TYPE="EXACT">
+                  <DVAL_ID ID="4294964936"/>
+                  <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">1993</SYN>
+               </DVAL>
+            </DIMENSION_NODE>
+            <DIMENSION_NODE>
+               <DVAL TYPE="EXACT">
+                  <DVAL_ID ID="4294963949"/>
+                  <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">1994</SYN>
+               </DVAL>
+            </DIMENSION_NODE>
+            <DIMENSION_NODE>
+               <DVAL TYPE="EXACT">
+                  <DVAL_ID ID="4294963107"/>
+                  <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">1995</SYN>
+               </DVAL>
+            </DIMENSION_NODE>
+            <DIMENSION_NODE>
+               <DVAL TYPE="EXACT">
+                  <DVAL_ID ID="4294962060"/>
+                  <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">1996</SYN>
+               </DVAL>
+            </DIMENSION_NODE>
+            <DIMENSION_NODE>
+               <DVAL TYPE="EXACT">
+                  <DVAL_ID ID="4294961292"/>
+                  <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">1997</SYN>
+               </DVAL>
+            </DIMENSION_NODE>
+            <DIMENSION_NODE>
+               <DVAL TYPE="EXACT">
+                  <DVAL_ID ID="4294960660"/>
+                  <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">1998</SYN>
+               </DVAL>
+            </DIMENSION_NODE>
+            <DIMENSION_NODE>
+               <DVAL TYPE="EXACT">
+                  <DVAL_ID ID="4294960307"/>
+                  <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">1999</SYN>
+               </DVAL>
+            </DIMENSION_NODE>
+            <DIMENSION_NODE>
+               <DVAL TYPE="EXACT">
+                  <DVAL_ID ID="4294960252"/>
+                  <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">2000</SYN>
+               </DVAL>
+            </DIMENSION_NODE>
+            <DIMENSION_NODE>
+               <DVAL TYPE="EXACT">
+                  <DVAL_ID ID="4294960250"/>
+                  <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Non - Vintage</SYN>
+               </DVAL>
+            </DIMENSION_NODE>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Jewlery</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="5"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Home</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="6"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Fashion</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="3"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Accessories</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="8"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Designers</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="9"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Clearance</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+      </DIMENSION_NODE>
+   </DIMENSION>
+   <DIMENSION NAME="Colour" SRC_FILE="C:\Endeca\Solutions\Asiana\data\processing\dimensions.xml" SRC_TYPE="AUTOGEN">
+      <DIMENSION_ID ID="7"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="7"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">Colour</SYN>
+         </DVAL>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294959942"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Red</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294959941"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Green</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294959940"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Yellow</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294959939"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Pink</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294959938"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Gold</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294959937"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Emerald</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294959936"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Silver</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="EXACT">
+               <DVAL_ID ID="4294959935"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">Blue</SYN>
+            </DVAL>
+         </DIMENSION_NODE>
+      </DIMENSION_NODE>
+   </DIMENSION>
+   <DIMENSION NAME="Price" SRC_FILE="C:\Endeca\Solutions\Asiana\data\processing\dimensions.xml" SRC_TYPE="INTERNAL">
+      <DIMENSION_ID ID="10"/>
+      <DIMENSION_NODE>
+         <DVAL TYPE="EXACT">
+            <DVAL_ID ID="10"/>
+            <SYN DISPLAY="TRUE" SEARCH="FALSE" CLASSIFY="FALSE">Price</SYN>
+         </DVAL>
+         <DIMENSION_NODE>
+            <DVAL TYPE="RANGE">
+               <DVAL_ID ID="11"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">£5 or less</SYN>
+               <LBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="0" CLOSURE="CLOSED"/>
+               </LBOUND>
+               <UBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="4.99" CLOSURE="CLOSED"/>
+               </UBOUND>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="RANGE">
+               <DVAL_ID ID="12"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">£5 to £10</SYN>
+               <LBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="5" CLOSURE="CLOSED"/>
+               </LBOUND>
+               <UBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="9.99" CLOSURE="CLOSED"/>
+               </UBOUND>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="RANGE">
+               <DVAL_ID ID="13"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">£10 to £15</SYN>
+               <LBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="10" CLOSURE="CLOSED"/>
+               </LBOUND>
+               <UBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="14.99" CLOSURE="CLOSED"/>
+               </UBOUND>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="RANGE">
+               <DVAL_ID ID="14"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">£15 to £20</SYN>
+               <LBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="15" CLOSURE="CLOSED"/>
+               </LBOUND>
+               <UBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="19.99" CLOSURE="CLOSED"/>
+               </UBOUND>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="RANGE">
+               <DVAL_ID ID="15"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">£20 to £30</SYN>
+               <LBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="20" CLOSURE="CLOSED"/>
+               </LBOUND>
+               <UBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="29.99" CLOSURE="CLOSED"/>
+               </UBOUND>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="RANGE">
+               <DVAL_ID ID="16"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">£30 to £40</SYN>
+               <LBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="30" CLOSURE="CLOSED"/>
+               </LBOUND>
+               <UBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="39.99" CLOSURE="CLOSED"/>
+               </UBOUND>
+            </DVAL>
+         </DIMENSION_NODE>
+         <DIMENSION_NODE>
+            <DVAL TYPE="RANGE">
+               <DVAL_ID ID="17"/>
+               <SYN DISPLAY="TRUE" SEARCH="TRUE" CLASSIFY="TRUE">£40 to £50</SYN>
+               <LBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="40" CLOSURE="CLOSED"/>
+               </LBOUND>
+               <UBOUND>
+                  <BOUND TYPE="FLOAT" VALUE="49.99" CLOSURE="CLOSED"/>
+               </UBOUND>
+            </DVAL>
+         </DIMENSION_NODE>
+      </DIMENSION_NODE>
+   </DIMENSION>
+</DIMENSIONS>

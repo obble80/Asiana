@@ -1,0 +1,172 @@
+﻿@using Combres.Mvc
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:regular,italic,bold,bolditalic'
+        rel='stylesheet' type='text/css' />
+    <link href="@Url.CombresUrl("siteCss")" rel="stylesheet" type="text/css" />
+    <script src="@Url.CombresUrl("siteJs")" type="text/javascript"></script>
+    <!--[if IE]>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/content/themes/fashion-ie.css")" />
+<![endif]-->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23196890-1']);
+        _gaq.push(['_setDomainName', '.fashinon.co.uk']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <div id="page">
+            <header id="masthead">
+                <div id="header">
+                    <div id="uppers">
+                        <div id="logo">
+                            <!--<img src="/content/themes/fashinon.jpg" />-->
+                        </div>
+                        <div id="search">
+                            @using (Html.BeginForm("Index", "Browse", FormMethod.Post))
+                            {
+                                <input type="text" name="searchTerm" value="" id="searchTerm" />
+                                <input type="submit" name="s" value="Search" class="smallButton" id="s" />
+                            }
+                        </div>
+                        <div id="links">
+                            <ul>
+                                <li>@Html.ActionLink("Log In", "Login", "Account", null, new { rel = "nofollow" })</li>
+                                <li>@Html.ActionLink("My Account", "Details", "Account", null, new { rel = "nofollow" })</li>
+                                <li><a href="#">Help</a></li>
+                            </ul>
+                            <div class="phone">
+                                0208 7934740</div>
+                        </div>
+                        <div id="basket">
+                            @RenderSection("Basket", false)
+                        </div>
+                        <div class="clear-fix-all">
+                        </div>
+                    </div>
+                    <div id="nav">
+                        <div class="redGradient">
+                            <ul>
+                                @RenderSection("TopNavigation", true)
+                                <li><a href="#">Contact</a></li>
+                                <div class="clear-fix">
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="breadCrumb">
+                        <ul>
+                            @RenderSection("BreadCrumb", false)
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div id="women">
+            </div>
+            <div id="main">
+                @RenderBody()
+                <div class="clear-fix-all"></div>
+            </div>
+                <footer id="footer">
+                    <div class="mod">
+                        <h2>
+                            <em>Fashinon Facts</em></h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    <a href="#">Our Guaretenee</a></h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="#">Site Map</a></h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="#">Careers</a></h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="#">Everything Else</a></h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mod">
+                        <h2>
+                            <em>Fashinon Designers</em></h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    <a href="#">Handmade</a></h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="#">Traditional Methods</a></h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="#">Designer Profiles</a></h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="#">Natural Materials</a></h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mod">
+                        <h2>
+                            <em>Fashinon Fair Trade</em></h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    <a href="#">Responsibily Sourced</a></h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="#">Traditional Methods</a></h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="#">Designer Profiles</a></h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="#">Everything Else</a></h3>
+                            </li>
+                        </ul>
+                    </div>
+           </footer>
+            
+            <div id="recordDetailContainer">
+            </div>
+            <script type="text/javascript">
+                function show() {
+                    $.fancybox(
+                                {
+                                    'content': $('#recordDetail'),
+                                    'autoDimensions': true,
+                                    'width': 'auto',
+                                    'height': 'auto',
+                                    'transitionIn': 'none',
+                                    'transitionOut': 'none'
+                                }
+                            );
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
